@@ -1,0 +1,22 @@
+version: "3.8"
+services:
+  frontend:
+    build:
+      context: .
+      target: production
+      args:
+        VITE_SERVER_URL: ${VITE_SERVER_URL}
+        VITE_KINOPOISK_TOKEN: ${VITE_KINOPOISK_TOKEN}
+    ports:
+      - "80:80"
+    env_file:
+      - .env
+    volumes:
+      - frontend:/var/lib/frontend/data
+    networks:
+      - bitrix-net
+volumes:
+  frontend:
+networks:
+  bitrix-net:
+    driver: bridge
