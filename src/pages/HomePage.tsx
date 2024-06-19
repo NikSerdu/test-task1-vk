@@ -2,10 +2,10 @@ import { Pagination } from "@mui/material";
 import { useQuery } from "@tanstack/react-query";
 import { FC, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
-import { MovieService } from "../../services/movie.service";
-import Filters from "./Filters/Filters";
-import MovieList from "./MovieList/MovieList";
-import MoiveListItemSkeleton from "./MovieList/MovieListItem/MoiveListItemSkeleton";
+import Filters from "../components/Filters/Filters";
+import MovieList from "../components/MovieList/MovieList";
+import MoiveListItemSkeleton from "../components/MovieList/MovieListItem/MoiveListItemSkeleton";
+import { MovieService } from "../services/movie.service";
 
 const HomePage: FC = () => {
   const [filters, setFilters] = useSearchParams();
@@ -38,7 +38,7 @@ const HomePage: FC = () => {
         <Filters filters={filters} setFilters={setFilters} />
       </div>
       <div className="flex flex-col gap-2 min-[840px]:w-4/5">
-        {!isFetching && movies ? (
+        {!isFetching && movies && movies.docs.length > 0 ? (
           <>
             <div className="flex flex-wrap gap-3 justify-center">
               <MovieList data={movies} />
@@ -58,10 +58,14 @@ const HomePage: FC = () => {
             </div>
           </>
         ) : (
-          <div className="flex flex-wrap gap-3">
-            {new Array(50).fill(0).map((item, index) => (
-              <MoiveListItemSkeleton key={index} />
-            ))}
+          <div className="flex flex-wrap gap-3 justify-center">
+            {!isFetching && movies && movies.docs.length === 0 ? (
+              <p className="font-bold text-xl">Ничего не найдено</p>
+            ) : (
+              new Array(50)
+                .fill(0)
+                .map((item, index) => <MoiveListItemSkeleton key={index} />)
+            )}
           </div>
         )}
       </div>

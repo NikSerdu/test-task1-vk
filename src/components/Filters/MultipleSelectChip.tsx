@@ -7,7 +7,7 @@ import OutlinedInput from "@mui/material/OutlinedInput";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 import { Theme, useTheme } from "@mui/material/styles";
 import { FC } from "react";
-import { IFullGenre } from "../../../types/genre.interface";
+import { IFullGenre } from "../../types/genre.interface";
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;

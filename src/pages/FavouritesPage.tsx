@@ -1,9 +1,8 @@
 import { FC } from "react";
+import MovieListItem from "../components/MovieList/MovieListItem/MovieListItem";
+import { useFavourites } from "../hooks/useFavourites";
 
-import { useFavourites } from "../../hooks/useFavourites";
-import MovieListItem from "../Home/MovieList/MovieListItem/MovieListItem";
-
-const Favourites: FC = () => {
+const FavouritesPage: FC = () => {
   const { favourites, toggleFavourite } = useFavourites();
   return (
     <div className="flex flex-wrap gap-3 max-sm:justify-center ">
@@ -19,4 +18,4 @@ const Favourites: FC = () => {
   );
 };
 
-export default Favourites;
+export default FavouritesPage;

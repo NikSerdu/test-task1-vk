@@ -4,7 +4,7 @@ import { IconButton } from "@mui/material";
 import { pink } from "@mui/material/colors";
 import { FC } from "react";
 import { Link } from "react-router-dom";
-import { IShortMovie } from "../../../../types/shortMovie.interface";
+import { IShortMovie } from "../../../types/shortMovie.interface";
 type TypeProps = {
   movie: IShortMovie;
   toggleFavourite: (movie: IShortMovie) => void;

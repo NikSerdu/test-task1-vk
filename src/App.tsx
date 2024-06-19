@@ -1,15 +1,15 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import Favourites from "./components/Favourites/Favourites";
-import Home from "./components/Home/Home";
-import Movie from "./components/Movie/Movie";
+import FavouritesPage from "./pages/FavouritesPage";
+import HomePage from "./pages/HomePage";
+import MoviePage from "./pages/MoviePage";
 
 function App() {
   return (
     <Routes>
-      <Route element={<Home />} path="/" />
-      <Route element={<Movie />} path="/movie/:movieId" />
-      <Route element={<Favourites />} path="/favourites" />
+      <Route element={<HomePage />} path="/" />
+      <Route element={<MoviePage />} path="/movie/:movieId" />
+      <Route element={<FavouritesPage />} path="/favourites" />
     </Routes>
   );
 }

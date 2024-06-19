@@ -1,6 +1,6 @@
 import { FC } from "react";
-import { useFavourites } from "../../../hooks/useFavourites";
-import { IMovieResponse } from "../../../types/movies.interface";
+import { useFavourites } from "../../hooks/useFavourites";
+import { IMovieResponse } from "../../types/movies.interface";
 import MovieListItem from "./MovieListItem/MovieListItem";
 
 type TypeProps = {

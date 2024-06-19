@@ -2,7 +2,7 @@ import { Alert, Button, Snackbar } from "@mui/material";
 import TextField from "@mui/material/TextField";
 import { useQuery } from "@tanstack/react-query";
 import { FC, useState } from "react";
-import { MovieService } from "../../../services/movie.service";
+import { MovieService } from "../../services/movie.service";
 import MultipleSelectChip from "./MultipleSelectChip";
 
 type TypeProps = {
